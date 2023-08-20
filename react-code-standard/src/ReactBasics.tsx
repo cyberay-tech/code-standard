@@ -49,7 +49,7 @@ const isNonEmptyString = (str: string | undefined): str is string => {
 }
 
 const MyFunctionComponent: FunctionComponent<Props> = (props) => {
-  const { url, show = true } = props // Destructure in the function body rather than declaration
+  const { url, footerText, show = true } = props // Destructure in the function body rather than declaration
   // only destructuring the props under the following conditions:
   // - the property of the props object is used more than once
   // - the property of the props has a default value
@@ -95,7 +95,7 @@ const MyFunctionComponent: FunctionComponent<Props> = (props) => {
    */
   function getFooterText(): string {
     // for string, explicitly check for undefined and empty string
-    return isNonEmptyString(props.footerText) ? props.footerText : 'no footer'
+    return isNonEmptyString(footerText) ? footerText : 'no footer'
   }
   // Single return statement where possible
   // use the ternary operator or && operator to return a value conditionally rather than an if statement
