@@ -48,7 +48,7 @@ const isNonEmptyString = (str: string | undefined): str is string => {
     return typeof str === 'string' && str.length > 0
 }
 
-export const MyFunctionComponent: FunctionComponent<Props> = (props) => {
+const MyFunctionComponent: FunctionComponent<Props> = (props) => {
   const { url, show = true } = props // Destructure in the function body rather than declaration
   // only destructuring the props under the following conditions:
   // - the property of the props object is used more than once
@@ -109,3 +109,5 @@ export const MyFunctionComponent: FunctionComponent<Props> = (props) => {
     </>
   ) : null
 }
+
+export default MyFunctionComponent
